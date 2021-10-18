@@ -1,0 +1,24 @@
+{
+  "name": "position-merge",
+  "version": "1.0.0",
+  "description": "A simple algorithm that takes an array of objects with coordinates and merges them into subarrays of objects that are phisically close to each other according to a specified tolerance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnan-mujagic/position-merge.git"
+  },
+  "keywords": [
+    "Maps",
+    "Visualizing",
+    "Coordinates"
+  ],
+  "author": "Adnan Mujagic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adnan-mujagic/position-merge/issues"
+  },
+  "homepage": "https://github.com/adnan-mujagic/position-merge#readme"
+}
