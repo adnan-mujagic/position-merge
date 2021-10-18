@@ -43,6 +43,7 @@ let data = [
 ]
 ```
 ### 2. tolerance
+This is a number that determines whether two coordinates are close to each other. For example if tolerance is 1, and we are comparing two coordinates `(1, 1), (0.5, 0.5)`: They **will** be merged together. Whereas if the two compared coordinates were `(1, 1), (8, 8)` they would not be considered close and as a result they **won't** merge.
 ```
 let tolerance = 1; // Integer Number
 let tolerance = 1.5321 // Float Number
