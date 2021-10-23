@@ -1,20 +1,24 @@
 export default function main(data, tolerance){
+    console.log("MAIN FUNCTION SAYS DATA LENGTH IS:"+data.length)
+    if(data.length==1){
+        data[0] = [data[0]];
+        return;
+    }
     for(let i=0; i<data.length-1; i++){
-        console.log(i)
         if(data[i]){
             data[i]=[data[i]];
             for(let j=i+1; j<data.length; j++){
-                console.log(i+" "+j)
                 if(data[j]){
                     if(checkClose(data[i], data[j], tolerance)){
-                        console.log("should merge")
                         merge(data, i, j)
                         j--;
-                        console.log(data)
                     }
                 }
             }
         }
+    }
+    if(!data[data.length-1].length){
+        data[data.length-1] = [data[data.length-1]]
     }
 }
 
