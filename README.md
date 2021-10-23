@@ -1,6 +1,6 @@
 # Position Merge Package
 This is an algorithm with approximate complexity of O(NlogN) that takes an array of data with coordinates and merges the objects that are physically close to each other into subarrays.
-It has one publicly accessible function `main(data: Array[], tolerance: Number)`. 
+It has one publicly accessible function `main(data: Array[], tolerance: Number)`. Please make sure that the data array that you provide has at least one element!
 ## Usage Example
 ```
 import main from "./node_modules/position-merge"
