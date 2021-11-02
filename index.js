@@ -1,5 +1,4 @@
-export default function main(data, tolerance){
-    console.log("MAIN FUNCTION SAYS DATA LENGTH IS:"+data.length)
+function main(data, tolerance){
     if(data.length==1){
         data[0] = [data[0]];
         return;
@@ -23,9 +22,10 @@ export default function main(data, tolerance){
 }
 
 function checkClose(objectOne, objectTwo, tolerance){
-    let latitudeDifference = objectOne.length>1 ? Math.abs(calculateEstimatedPosition(getAllGroupedPositions(objectOne)).latitude - objectTwo.coordinates.latitude) : Math.abs(getAllGroupedPositions(objectOne)[0].latitude - objectTwo.coordinates.latitude);
-    let longitudeDifference = objectOne.length>1 ? Math.abs(calculateEstimatedPosition(getAllGroupedPositions(objectOne)).longitude - objectTwo.coordinates.longitude) : Math.abs(getAllGroupedPositions(objectOne)[0].longitude - objectTwo.coordinates.longitude);
-    if(latitudeDifference<=tolerance && longitudeDifference<=tolerance){
+    let firstObjectEstimatedPosition = calculateEstimatedPosition(getAllGroupedPositions(objectOne));
+    let latitudeDifference = Math.abs(firstObjectEstimatedPosition.latitude - objectTwo.coordinates.latitude)
+    let longitudeDifference = Math.abs(firstObjectEstimatedPosition.longitude - objectTwo.coordinates.longitude)
+    if(Math.pow(latitudeDifference, 2) + Math.pow(longitudeDifference, 2) <= Math.pow(tolerance, 2)){
         return true;
     }
     return false;
@@ -53,3 +53,52 @@ function getAllGroupedPositions(data){
     }
     return allPositions;
 }
+
+//Usage example
+
+let data = [
+    {
+        id:1,
+        coordinates:{
+            latitude:0,
+            longitude:0
+        }
+    
+    },
+    {
+        id:2,
+        coordinates:{
+            latitude:3,
+            longitude:4
+        }
+    
+    },
+    {
+        id:3,
+        coordinates:{
+            latitude:20,
+            longitude:20
+        }
+    
+    },
+    {
+        id:4,
+        coordinates:{
+            latitude:30,
+            longitude:30
+        }
+    
+    },
+    {
+        id:5,
+        coordinates:{
+            latitude:2,
+            longitude:0
+        }
+    
+    }
+]
+
+main(data, 5)
+
+console.log(data)
