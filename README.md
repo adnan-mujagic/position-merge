@@ -1,6 +1,6 @@
 # Position Merge Package
 
-This is an algorithm with approximate complexity of O(NlogN) that takes an array of data with coordinates and merges the objects that are physically close to each other into subarrays.
+This is an algorithm that takes an array of data with coordinates and merges the objects that are physically close to each other into subarrays.
 It has one publicly accessible function `main(data: Array[], tolerance: Number)`. Please make sure that the data array that you provide has at least one element!
 
 ## Usage Example
@@ -58,3 +58,7 @@ let tolerance = 1; // Integer Number
 let tolerance = 1.5321 // Float Number
 ... any other legal number
 ```
+
+Disclaimer: 
+
+This algorithm gets the job done, but has questionable performance, especially if you want to process large amounts of data!
